@@ -101,3 +101,12 @@ or hand the sample to a proper sandbox later.
 
 The score is a **triage signal**. Always read the indicator table, and when in doubt, verify with the
 sender through a channel you already trust.
+
+## Lab setup (VirtualBox Ubuntu VM)
+
+1. Create an Ubuntu VM, install Python, this project and Ollama (`ollama pull llama3.2`) while it still has internet.
+2. Take a clean snapshot.
+3. Isolate the network: Host-only / Internal Network, or disconnect the adapter. The tool works fully offline.
+4. Disable shared clipboard, drag-and-drop and shared folders.
+5. Move samples in as a password-protected zip and unzip them only inside the VM. Never open live samples on the host.
+6. Run `streamlit run app.py` inside the VM, then revert to the snapshot when you're done.
